@@ -2,7 +2,7 @@ var x;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  frameRate(3);
+  frameRate(10);
   rectMode(CENTER);
  
   
@@ -16,14 +16,15 @@ function draw() {
   let hr = hour();
   let mn = minute();
   let sc = second();
+  let x = 80-hr*2
   
   //stroke(50);
   //strokeWeight(2);
  
   push();
  
-  fill(random(15));
-  circle(0, 0, 480-(hr-12)*40);
+  fill(255, 150, 0, random(30, x));
+  circle(0, 0, 480-(hr)*20);
   pop();
   
   
@@ -40,6 +41,7 @@ function draw() {
   
   
   push();
+  strokeWeight(2);
   stroke(255, 0, 0);
   let end2 = map(mn, 0, 60, 0, 360);
   rotate(end2);
